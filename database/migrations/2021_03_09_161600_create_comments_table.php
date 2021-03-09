@@ -16,7 +16,7 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->enum('content',  ['APROBADO', 'RECHAZADO']);
+            $table->enum('status',  ['APROBADO', 'RECHAZADO']);
             $table->timestamps();
         });
     }
