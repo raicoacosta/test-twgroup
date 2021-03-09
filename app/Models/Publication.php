@@ -22,11 +22,16 @@ class Publication extends Model
 
     public function comments()
     {	
-        return $this->hasMany(App\Comment::class);
+        return $this->hasMany(\App\Models\Comment::class);
     }
 
-     public function publication()
+    public function user()
     {
-        return $this->belongsTo(App\Publication::class);
+        return $this->belongsTo(\App\Models\User::class);
+    }
+
+    public function getPublicationTimeAttribute()
+    {
+        return $this->created_at->diffForHumans();
     }
 }

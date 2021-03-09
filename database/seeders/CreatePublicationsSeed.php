@@ -13,6 +13,7 @@ class CreatePublicationsSeed extends Seeder
      */
     public function run()
     {
-		\App\Models\Publication::factory(20)->create();
+		\App\Models\Publication::factory(20)
+            ->create();
     }
 }

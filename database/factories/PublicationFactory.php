@@ -24,7 +24,7 @@ class PublicationFactory extends Factory
         return [
             'content' => $this->faker->paragraphs(2, true),
             'title' => $this->faker->paragraph(2, true),
-            'user_id' => \App\Models\User::first(),
+            'user_id' => \App\Models\User::inRandomOrder()->first(),
         ];
     }
 }

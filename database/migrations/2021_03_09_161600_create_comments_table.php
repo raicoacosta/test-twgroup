@@ -17,6 +17,19 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->longText('content');
             $table->enum('status',  ['APROBADO', 'RECHAZADO']);
+            $table->bigInteger('publication_id')
+                ->unsigned();
+            $table->bigInteger('user_id')
+                ->unsigned();
+            
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
+            $table->foreign('publication_id')
+                ->references('id')
+                ->on('publications');
+                
             $table->timestamps();
         });
     }

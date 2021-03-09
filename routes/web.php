@@ -22,5 +22,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::post('/publication/{id}/comment/store', [App\Http\Controllers\CommentController::class, 'store'])->name('comment.store');
+
 Route::get('/publication/{id}', [App\Http\Controllers\PublicationController::class, 'show'])->name('publication.show');
+
+
 
